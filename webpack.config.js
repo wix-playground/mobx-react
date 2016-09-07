@@ -1,5 +1,6 @@
 var webpack = require('webpack');
-
+var path = require('path');
+var SOURCES_PATH = ['src', 'test'].map(function(dir){return path.join(__dirname, dir)});
 
 function makeConfig(target) {
   return {
@@ -27,7 +28,7 @@ function makeConfig(target) {
     module: {
       loaders: [{
         test: /\.js$/,
-        exclude: /node_modules/,
+        include: SOURCES_PATH,
         loader: 'babel',
         query: {
           presets: ['es2015'],
