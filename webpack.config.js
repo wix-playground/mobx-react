@@ -57,13 +57,13 @@ function makeConfig(target) {
     plugins: [
       new webpack.DefinePlugin({
         __TARGET__: JSON.stringify(target),
-      }),
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false
-        }
-      })
-    ]
+      })/* ,
+	  new webpack.optimize.UglifyJsPlugin({
+	   compress: {
+		  warnings: false
+	   }
+	  })
+ 	*/]
   };
 }
 
